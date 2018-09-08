@@ -1,0 +1,42 @@
+using System;
+
+delegate int NumberChanger2(int a);
+namespace Delegates
+{
+    class TestDelgate {
+        static int num = 10;
+
+        public static int AddNum(int r)
+        {
+            num += r;
+            return num;
+        }
+
+        public static int MultNum(int r)
+        {
+            num *= r;
+            return num;
+        }
+
+        public static int getNum()
+        {
+            return num;
+        }
+
+        
+
+        static void Main(string[] args)
+        {
+            NumberChanger2 nc1 = new NumberChanger2(AddNum);
+            NumberChanger2 nc2 = new NumberChanger2(AddNum);
+
+            nc1 = nc1 + nc2;
+            nc1(25);
+
+            Console.WriteLine("this is {0}", getNum());
+            Console.ReadKey(); // pause the program
+
+
+        }
+    }
+}
