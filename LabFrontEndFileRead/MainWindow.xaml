@@ -1,0 +1,31 @@
+<Window x:Class="lab_master_detail_AndreLussier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_master_detail_AndreLussier"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="49*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Center" Margin="10,10,0,0" Width="5"/>
+        <Label Content="Name" Grid.Column="2" HorizontalAlignment="Left" Margin="153,109,0,0" VerticalAlignment="Top"/>
+        <Label Content="RottenScore" Grid.Column="2" HorizontalAlignment="Left" Margin="148,157,0,0" VerticalAlignment="Top"/>
+        <Label Content="Review" Grid.Column="2" HorizontalAlignment="Left" Margin="153,223,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.074,0.231"/>
+        <TextBox x:Name="textBoxName" Grid.Column="2" Height="23" Margin="311,109,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding SelectedItem.Name, ElementName=listViewMovies}"/>
+        <TextBox x:Name="textBoxRottenTomatoesScore" Grid.Column="2" Height="23" Margin="311,169,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding SelectedItem.RottenTomatoesScore, ElementName=listViewMovies}"/>
+        <TextBox x:Name="textBoxReview" Grid.Column="2" Height="24" Margin="311,225,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding SelectedItem.Review, ElementName=listViewMovies}"/>
+        <ListView x:Name="listViewMovies" HorizontalAlignment="Left" Height="207" Margin="34,62,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.81,0.27" SelectionChanged="ListView_SelectionChanged" Loaded="ListView_Loaded">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>
