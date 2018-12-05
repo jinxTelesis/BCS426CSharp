@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab_Task_console_Andre_L
+{
+    class Program
+    {
+        static void Message()
+        {
+            Console.WriteLine("Yeah, semester is almost over!!!");
+        }
+
+        static void Main(string[] args)
+        {
+            Action a = new Action(Message);
+
+            Task t = new Task(a);
+            t.Start();
+            t.Wait();
+            Console.Write("Mainfinished");
+        }
+    }
+}
